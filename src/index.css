@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 25% 4%;
+    --foreground: 0 0% 98%;
+    --card: 240 25% 6%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 25% 4%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 240 25% 8%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 25% 8%;
+    --muted-foreground: 240 10% 70%;
+    --accent: 0 0% 100%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 25% 8%;
+    --input: 240 25% 8%;
+    --ring: 240 25% 10%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  /* Remove number input spinners */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+@layer utilities {
+  .glow {
+    box-shadow: 0 0 20px theme('colors.primary.DEFAULT/0.1'),
+                0 0 40px theme('colors.primary.DEFAULT/0.05');
+  }
+  
+  .space-dots {
+    background-image: radial-gradient(circle, theme('colors.primary.DEFAULT/0.05') 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
